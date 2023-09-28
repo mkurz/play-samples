@@ -5,6 +5,9 @@ import play.data.validation.Constraints;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+
 import java.util.Date;
 
 /**
@@ -65,6 +68,12 @@ public class Computer extends BaseModel {
 
     public void setCompany(Company company) {
         this.company = company;
+    }
+
+    @PrePersist
+    @PreUpdate
+    public void synchronizeObject() {
+        System.out.println("Inside @PrePersist/@PreUpdate");
     }
 }
 
