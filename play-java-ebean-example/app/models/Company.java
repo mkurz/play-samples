@@ -2,7 +2,7 @@ package models;
 
 import play.data.validation.Constraints;
 
-import jakarta.persistence.Entity;
+import javax.persistence.Entity;
 
 
 

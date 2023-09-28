@@ -4,7 +4,7 @@ import models.Computer;
 import play.data.Form;
 import play.data.FormFactory;
 import play.i18n.MessagesApi;
-import play.libs.concurrent.ClassLoaderExecutionContext;
+import play.libs.concurrent.HttpExecutionContext;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
@@ -13,7 +13,7 @@ import repository.CompanyRepository;
 import repository.ComputerRepository;
 
 import javax.inject.Inject;
-import jakarta.persistence.PersistenceException;
+import javax.persistence.PersistenceException;
 import java.util.Map;
 import java.util.concurrent.CompletionStage;
 
@@ -25,14 +25,14 @@ public class HomeController extends Controller {
     private final ComputerRepository computerRepository;
     private final CompanyRepository companyRepository;
     private final FormFactory formFactory;
-    private final ClassLoaderExecutionContext classLoaderExecutionContext;
+    private final HttpExecutionContext classLoaderExecutionContext;
     private final MessagesApi messagesApi;
 
     @Inject
     public HomeController(FormFactory formFactory,
                           ComputerRepository computerRepository,
                           CompanyRepository companyRepository,
-                          ClassLoaderExecutionContext classLoaderExecutionContext,
+                          HttpExecutionContext classLoaderExecutionContext,
                           MessagesApi messagesApi) {
         this.computerRepository = computerRepository;
         this.formFactory = formFactory;

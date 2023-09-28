@@ -2,8 +2,8 @@ package models;
 
 import io.ebean.Model;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseModel extends Model {

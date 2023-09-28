@@ -3,10 +3,16 @@ package models;
 import play.data.format.Formats;
 import play.data.validation.Constraints;
 
+/*
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+ */
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 import java.util.Date;
 
